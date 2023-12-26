@@ -1,9 +1,4 @@
-output "instance_id" {
-  description = "ID of the EC2 instance"
-  value       = aws_instance.ec2_aws_instance_ssh.id
-}
-
-output "instance_public_ip" {
-  description = "Public IP address of the EC2 instance"
-  value       = aws_instance.ec2_aws_instance_ssh.public_ip
+output "ec2_instance_public_ips" {
+  description = "Public IP addresses of EC2 instances"
+  value       = module.ec2_instances[*].public_ip
 }
